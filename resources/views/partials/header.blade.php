@@ -6,17 +6,20 @@
         </button>
         <div class="collapse navbar-collapse   " id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto ">
-               
-                    <x-nav-item :href="route('home')" :active="request()->routeIs('home')">
-                        Home
-                    </x-nav-item>
-                    <x-nav-item :href="route('about')" :active="request()->routeIs('about')">
-                        About
-                    </x-nav-item>
-                    <x-nav-item :href="route('produk.index')" :active="request()->routeIs('about')">
-                        Produk
-                    </x-nav-item>
-                
+
+                <x-nav-item :href="route('home')" :active="request()->routeIs('home')">
+                    Home
+                </x-nav-item>
+                <x-nav-item :href="route('about')" :active="request()->routeIs('about')">
+                    About
+                </x-nav-item>
+                <x-nav-item :href="route('produk.index')" :active="request()->routeIs('about')">
+                    Produk
+                </x-nav-item>
+                <x-nav-item :href="route('kategori.index')" :active="request()->routeIs('about')">
+                    Daftar Kategori
+                </x-nav-item>
+
             </div>
         </div>
     </div>

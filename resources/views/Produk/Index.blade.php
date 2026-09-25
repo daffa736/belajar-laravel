@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<h3 class="text-center">daftar produk</h3>
-<table  class="table table-hover">
+<h3 class="text-center my-4">Daftar Produk</h3>
+<div class="container mt-4 ">
+<table class=" table table-hover table-bordered border-4 text-center">
     <thead>
         <tr>
             <th>ID</th>
@@ -15,11 +16,12 @@
         <tr>
             <td>{{ $key }}</td>
             <td>{{ $produk['nama_produk'] }}</td>
-            <td>{{ number_format( $produk['harga']) }}</td>
+            <td> Rp{{ number_format( $produk['harga']) }}</td>
             <td><a href="{{ route('produk.show', $key) }}">Lihat Detail</a></td>
         </tr>
         @endforeach
 
     </tbody>
 </table>
+</div>
 @endsection

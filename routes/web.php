@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\ResponseFactory;
@@ -15,4 +16,6 @@ Route::get('/about', function(){
 Route::get('/produk',[ProdukController::class, 'index'])->name('produk.index');
 
 Route::get('/produk/{id}',[ProdukController::class, 'show'])->name('produk.show');
+
+Route::resource('/kategori', KategoriController::class);
 

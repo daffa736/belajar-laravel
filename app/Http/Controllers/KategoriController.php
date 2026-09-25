@@ -6,12 +6,18 @@ use Illuminate\Http\Request;
 
 class KategoriController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    private function DaftarKategori(){
+        return [
+            ['nama_kategori' => 'Handphone'],
+            ['nama_kategori' => 'Computer'],
+            ['nama_kategori' => 'Laptop'],
+        ];
+    }
     public function index()
     {
-        //
+        $kategori = $this->DaftarKategori();
+
+        return view('kategori.index',compact('kategori'));
     }
 
     /**
