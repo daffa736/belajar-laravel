@@ -25,7 +25,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('kategori.tambah');
     }
 
     /**
@@ -33,7 +33,7 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return view 
     }
 
     /**
@@ -49,7 +49,11 @@ class KategoriController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $kategori = $this->DaftarKategori();
+
+        $kategoris = $kategori[$id];
+
+        return view('kategori.edit',compact('kategoris'));
     }
 
     /**

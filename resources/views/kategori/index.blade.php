@@ -15,7 +15,15 @@
         <tr>
             <td>{{ $key }}</td>
             <td>{{$kategoris['nama_kategori'] }}</td>
-            <td><a href="{{ route('#', $key) }}">Lihat Detail</a></td>
+            <td>
+                <a href="{{ route('kategori.edit', $key) }}" class="btn btn-primary">Edit </a>
+
+                <form action="" method="post" style="display: inline;">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-danger"> Hapus </button>
+                </form>
+        </td>
         </tr>
         @endforeach
 

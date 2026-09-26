@@ -17,5 +17,5 @@ Route::get('/produk',[ProdukController::class, 'index'])->name('produk.index');
 
 Route::get('/produk/{id}',[ProdukController::class, 'show'])->name('produk.show');
 
-Route::resource('/kategori', KategoriController::class);
+Route::resource('kategori', KategoriController::class);
 
