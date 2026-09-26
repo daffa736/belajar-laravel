@@ -53,7 +53,7 @@ class KategoriController extends Controller
 
         $kategoris = $kategori[$id];
 
-        return view('kategori.edit',compact('kategoris'));
+        return view('kategori.edit',compact('kategoris','id'));
     }
 
     /**
@@ -61,7 +61,7 @@ class KategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+       return redirect()->route('kategori.index')->with('berhasil', "Kategori dengan ID: $id sudah diubah");
     }
 
     /**

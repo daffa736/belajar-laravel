@@ -1,5 +1,12 @@
 @extends('layouts.app')
 @section('content')
+@if (session('berhasil'))
+    <script>
+        alert("{{ session('berhasil') }}");
+    </script>
+
+
+@endif
 <h3 class="text-center mt-4">Daftar Kategori</h3>
 <div class="container mt-4">
 <table  class="table table-hover table-bordered border-4 text-center">
@@ -29,5 +36,6 @@
 
     </tbody>
 </table>
+<button class="btn btn-info"><a href="{{ route('kategori.create') }}"  class= " text-decoration-none text-light">Tambah Kategori</a></button>
 </div>
 @endsection

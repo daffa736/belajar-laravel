@@ -17,7 +17,7 @@
             <td>{{ $key }}</td>
             <td>{{ $produk['nama_produk'] }}</td>
             <td> Rp{{ number_format( $produk['harga']) }}</td>
-            <td><a href="{{ route('produk.show', $key) }}">Lihat Detail</a></td>
+            <td><a href="{{ route('produk.show', $key) }}" style="text-decoration: none;">Lihat Detail</a></td>
         </tr>
         @endforeach
 
