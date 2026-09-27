@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class KategoriController extends Controller
 {
-    private function DaftarKategori(){
+    private function DaftarKategori()
+    {
         return [
             ['nama_kategori' => 'Handphone'],
             ['nama_kategori' => 'Computer'],
@@ -17,7 +18,7 @@ class KategoriController extends Controller
     {
         $kategori = $this->DaftarKategori();
 
-        return view('kategori.index',compact('kategori'));
+        return view('kategori.index', compact('kategori'));
     }
 
     /**
@@ -33,7 +34,8 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        // return view 
+
+        return redirect()->route('kategori.index')->with('berhasil', "Kategori sudah ditambhkan");
     }
 
     /**
@@ -41,7 +43,11 @@ class KategoriController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $kategori = $this->DaftarKategori();
+
+        $kategoris = $kategori[$id];
+
+        return view('kategori.show',compact('kategoris'));
     }
 
     /**
@@ -53,7 +59,7 @@ class KategoriController extends Controller
 
         $kategoris = $kategori[$id];
 
-        return view('kategori.edit',compact('kategoris','id'));
+        return view('kategori.edit', compact('kategoris', 'id'));
     }
 
     /**
@@ -61,7 +67,7 @@ class KategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-       return redirect()->route('kategori.index')->with('berhasil', "Kategori dengan ID: $id sudah diubah");
+        return redirect()->route('kategori.index')->with('berhasil', "Kategori dengan ID: $id sudah diubah");
     }
 
     /**
@@ -69,6 +75,7 @@ class KategoriController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return redirect()->route('kategori.index')->with('berhasil', "Kategori dengan ID: $id sudah dihapus");
+        
     }
 }
